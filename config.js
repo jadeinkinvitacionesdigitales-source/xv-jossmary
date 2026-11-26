@@ -21,7 +21,7 @@ window.INVITACION = {
   // WhatsApp para confirmar (código de país + número, sin espacios ni +)
   whatsapp: "50765701178",
   // URL /exec del Apps Script (confirmaciones y canciones a la hoja de Google + panel). Vacío = llegan por WhatsApp.
-  scriptUrl: "",
+  scriptUrl: "https://script.google.com/macros/s/AKfycby7MLOB3BPIUoY-C-KQ4Ofq4nQfcioyxCnVYDFsNOPCRiqDpPEKJnZImlz0kvhleWY/exec",
   // Enlace de Google Drive para que los invitados suban fotos (vacío = se oculta el botón)
   drive: "https://drive.google.com/drive/folders/1-3AL8B3kbEojgtK3dhJIcTcPoPw6KwYD?usp=sharing",
   // Canción de fondo ("Mi príncipe azul"): p. ej. "audio/cancion.mp3". Vacío = sin botón de música.

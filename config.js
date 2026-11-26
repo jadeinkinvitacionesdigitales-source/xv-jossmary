@@ -21,7 +21,7 @@ window.INVITACION = {
   // WhatsApp para confirmar (código de país + número, sin espacios ni +)
   whatsapp: "50765701178",
   // Enlace de Google Drive para que los invitados suban fotos (vacío = se oculta el botón)
-  drive: "",
+  drive: "https://drive.google.com/drive/folders/1-3AL8B3kbEojgtK3dhJIcTcPoPw6KwYD?usp=sharing",
   // Canción de fondo ("Mi príncipe azul"): p. ej. "audio/cancion.mp3". Vacío = sin botón de música.
   musica: "audio/cancion.mp3",
   // Foto principal + 5 fotos alrededor de la invitación (en este orden)

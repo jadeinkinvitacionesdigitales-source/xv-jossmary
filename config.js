@@ -23,7 +23,7 @@ window.INVITACION = {
   // Enlace de Google Drive para que los invitados suban fotos (vacío = se oculta el botón)
   drive: "",
   // Canción de fondo ("Mi príncipe azul"): p. ej. "audio/cancion.mp3". Vacío = sin botón de música.
-  musica: "",
+  musica: "audio/cancion.mp3",
   // Foto principal + 5 fotos alrededor de la invitación (en este orden)
   fotos: ["img/foto1.jpg", "img/foto2.jpg", "img/foto3.jpg", "img/foto4.jpg", "img/foto5.jpg", "img/foto6.jpg"]
 };

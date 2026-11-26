@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<script src="config.js?v=3"></script>
+<script src="config.js?v=4"></script>
 <style>
 :root{
   --rosa:#f6d6dc; --rosa2:#eab3c0; --rosa3:#d97f97; --fucsia:#c2577a; --vino:#7a2f48;
@@ -470,7 +470,7 @@ footer{text-align:center;padding:1rem 0 2.5rem;font-family:"Cinzel",serif;font-s
 </div>
 
 <button id="musica" aria-label="Música"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg></button>
-<audio id="audio" loop preload="none"></audio>
+<audio id="audio" loop preload="auto"></audio>
 
 <script>
 (function(){
@@ -615,13 +615,14 @@ footer{text-align:center;padding:1rem 0 2.5rem;font-family:"Cinzel",serif;font-s
   function aInvitacion(){
     if(paso!==1) return; paso=3; clearTimeout(seguro); destello();
     setTimeout(()=>{ intro.remove(); vS.pause(); document.body.classList.remove("cerrada"); scrollTo(0,0); iniciarBrillos();
-      if(C.musica){ audio.volume=.7; audio.play().catch(()=>{}); btnM.classList.add("ver"); } },450);
+      if(C.musica && audio.paused){ audio.volume=.75; audio.play().catch(()=>{}); btnM.classList.add("ver"); } },450);
   }
   function abrir(){
     if(paso) return; paso=1;
     intro.classList.add("reproduciendo");
-    vS.volume=.8;
-    vS.play().catch(()=>{ vS.muted=true; vS.play().catch(aInvitacion); });
+    vS.muted=true;
+    if(C.musica){ audio.volume=.75; audio.play().catch(()=>{}); btnM.classList.add("ver"); }
+    vS.play().catch(aInvitacion);
     seguro=setTimeout(aInvitacion,12000);
   }
   intro.addEventListener("click",e=>{ if(e.target.id!=="saltarSobre") abrir(); });
@@ -629,7 +630,7 @@ footer{text-align:center;padding:1rem 0 2.5rem;font-family:"Cinzel",serif;font-s
   vS.addEventListener("timeupdate",()=>{ if(vS.currentTime>=7.6) aInvitacion(); });
   vS.addEventListener("ended",aInvitacion);
   vS.addEventListener("error",()=>{ if(paso===1) aInvitacion(); });
-  if(location.hash==="#sin-intro"){ intro.remove(); paso=3; document.body.classList.remove("cerrada"); iniciarBrillos(); }
+  if(location.hash==="#sin-intro"){ intro.remove(); paso=3; document.body.classList.remove("cerrada"); iniciarBrillos(); if(C.musica) btnM.classList.add("ver"); }
 
   // ---- revelado al deslizar ----
   const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("visto"); io.unobserve(e.target);} }),{threshold:.12});

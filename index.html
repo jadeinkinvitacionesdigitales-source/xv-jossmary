@@ -393,9 +393,7 @@ footer{text-align:center;padding:1rem 0 2.5rem;font-family:"Cinzel",serif;font-s
       <p class="cuerpo">Me encantaría ver mis XV a través de tus ojos. ¡Sube tus mejores fotos!</p>
       <div class="botones">
         <a class="btn oro" id="btnDrive" target="_blank" rel="noopener" style="display:none">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></svg>SUBIR MIS FOTOS</a>
-        <button class="btn" type="button" id="btnGaleria">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>VER GALERÍA</button></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></svg>SUBIR MIS FOTOS</a></div>
     </div>
   </section>
 
@@ -492,7 +490,6 @@ footer{text-align:center;padding:1rem 0 2.5rem;font-family:"Cinzel",serif;font-s
   const visor=q("#visor"), vImg=q("#vImg"); let actual=0;
   function verFoto(i){ actual=(i+fotos.length)%fotos.length; vImg.src=fotos[actual]; q("#vNum").textContent=(actual+1)+" / "+fotos.length; visor.classList.add("ver"); }
   if(C.drive){ const d=q("#btnDrive"); d.href=C.drive; d.style.display="inline-flex"; }
-  q("#btnGaleria").addEventListener("click",()=>verFoto(0));
   q("#vCerrar").addEventListener("click",()=>visor.classList.remove("ver"));
   q("#vAnt").addEventListener("click",e=>{e.stopPropagation();verFoto(actual-1)});
   q("#vSig").addEventListener("click",e=>{e.stopPropagation();verFoto(actual+1)});

@@ -2,6 +2,7 @@
 window.INVITACION = {
   nombre: "Jossmary",
   anfitriones: "Maribel Ríos",
+  papa: "José Aparicio",
   // Fecha y hora del evento (hora de Panamá, -05:00)
   fechaISO: "2026-12-12T19:00:00-05:00",
   dia: "Sábado",
@@ -15,7 +16,7 @@ window.INVITACION = {
   mapa: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Coopeve, Avenida Primera Oeste, David, Chiriquí, Panamá"),
   vestimenta: "Formal",
   frase: "Érase una vez una princesa que soñó con este día…",
-  texto: "Con la bendición de Dios y el amor de mi mamá, tengo el honor de invitarte a celebrar mis quince años, el día en que mi cuento de hadas se hace realidad.",
+  texto: "Con la bendición de Dios y el amor de mis padres, tengo el honor de invitarte a celebrar mis quince años, el día en que mi cuento de hadas se hace realidad.",
   gracias: "Gracias a Dios por bendecirme en esta nueva etapa de mi vida, y a ustedes por compartir este sueño hecho realidad.",
   // WhatsApp para confirmar (código de país + número, sin espacios ni +)
   whatsapp: "50765701178",
